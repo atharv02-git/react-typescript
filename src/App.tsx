@@ -1,35 +1,22 @@
 import "./App.css";
 import Greet from "./components/Greet";
-import Person from "./components/Person";
-import PersonList from "./components/PersonList";
+import { Heading } from "./components/Heading";
+import { Oscar } from "./components/Oscar";
+import { StatusProps } from "./components/StatusProps";
 
 function App() {
-  const personName = {
-    first: "Bruce",
-    last: "Wayne",
-  };
-
-  // working with array of object
-  const nameList = [
-    {
-      first: "Atharv",
-      last: "Bhandare",
-    },
-    {
-      first: "Virat",
-      last: "Kohli",
-    },
-    {
-      first: "Sachin",
-      last: "Tendulkar",
-    },
-  ];
-
   return (
     <div className="App">
-      <Greet name="Atharv" messageCount={20} isLoggedin={false} />
-      <Person name={personName} />
-      <PersonList names={nameList} />
+      <StatusProps status="success" />
+      <Heading>Placeholder Text</Heading>  {/* (alias) function Heading(): JSX.Element import Heading Type '{ children: string; }' has no properties in common with type 'IntrinsicAttributes'. */}
+
+      {/* Another varaint is when child is another react component */}
+      <Oscar>
+        <Heading>Oscar goes to Leonardo dicaprio!</Heading>
+      </Oscar>
+
+      {/* sometimes it happens a component prop doesn't have to be passed */}
+      <Greet name={'Atharv'} isLoggedin={false} />
     </div>
   );
 }
