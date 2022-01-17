@@ -1,4 +1,5 @@
-import { useReducer } from "react";
+import { useContext, useReducer } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 type CounterState = {
   count: number;
@@ -33,8 +34,9 @@ const reducer = (state: CounterState, action: CounterAction) => {
 
 export function Counter() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const theme = useContext(ThemeContext)
   return (
-    <div>
+    <div style={{ background: theme.primary.main, color: theme.primary.text}}>
       Count: {state.count}
       <button onClick={() => dispatch({ type: "increment", payload: 10 })}>
         Increment 10

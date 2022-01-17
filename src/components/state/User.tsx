@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 type AuthUser = {
   name: string;
@@ -20,8 +21,10 @@ export function User() {
     setUser(null)
   }
 
+  const theme = useContext(ThemeContext)
+
   return (
-    <div>
+    <div style={{background: theme.secondary.main, color: theme.primary.text}}>
       {!user && <button onClick={loginHandler}>Login</button>}
       {user && <button onClick={logoutHandler}>Logout</button>}
       <div>User name is {user?.name}</div>
