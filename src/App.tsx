@@ -1,16 +1,29 @@
 import "./App.css";
-import { Button } from "./components/Button";
-import { Input } from "./components/Input";
+import { Container } from "./components/Container";
+import PersonList from "./components/PersonList";
 
 function App() {
+  const nameList = [
+    {
+      first: 'Atharv',
+      last: 'Bhandare',
+      id: 1
+    },
+    {
+      first: "Virat",
+      last: "Kohli",
+      id: 2
+    },
+    {
+      first: "Sachin",
+      last: "Tendulkar",
+      id: 3
+    },
+  ]
   return (
     <div className="App">
-      <Button
-        clickHandler={(event, id) => {
-          console.log("button clicked", event, id);
-        }}
-      />
-      <Input value="" changeHandler={(event) => console.log(event)} />
+     <Container styles={{background: 'grey', padding: '2rem'}}/>
+     <PersonList names={nameList}/>
     </div>
   );
 }

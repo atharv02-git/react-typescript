@@ -1,8 +1,6 @@
+import {Name} from './Person.types'
 type PersonListProps = {
-  names: {
-    first: string;
-    last: string;
-  }[];
+  names: Name[]
 };
 
 export default function PersonList(props: PersonListProps) {
@@ -10,7 +8,7 @@ export default function PersonList(props: PersonListProps) {
     <div>
       {props.names.map((name) => {
         return (
-          <h2>
+          <h2 key={name.id}>
             {name.first} {name.last}
           </h2>
         );
