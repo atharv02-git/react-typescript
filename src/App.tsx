@@ -1,6 +1,8 @@
 import "./App.css";
 import { Container } from "./components/Container";
 import PersonList from "./components/PersonList";
+import { Counter } from "./components/state/Counter";
+import { User } from "./components/state/User";
 
 function App() {
   const nameList = [
@@ -24,6 +26,8 @@ function App() {
     <div className="App">
      <Container styles={{background: 'grey', padding: '2rem'}}/>
      <PersonList names={nameList}/>
+     <User />
+     <Counter />
     </div>
   );
 }
