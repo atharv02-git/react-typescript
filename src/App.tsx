@@ -1,12 +1,10 @@
 import "./App.css";
-import User from "./components/contexts/User";
-import { UserContextProvider } from "./components/contexts/UserContext";
-import { DomRef } from "./components/ref/DomRef";
+import { Counter } from "./components/class/Counter";
 
 export default function App() {
   return (
     <div className="App">
-     <DomRef />
+      <Counter message="The count value is: "/>
     </div>
   )    
 }
