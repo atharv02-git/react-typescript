@@ -1,5 +1,5 @@
 import { useContext, useReducer } from "react";
-import { ThemeContext } from "../../contexts/ThemeContext";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 type CounterState = {
   count: number;

@@ -1,13 +1,12 @@
 import "./App.css";
-import User from "./contexts/User";
-import { UserContextProvider } from "./contexts/UserContext";
+import User from "./components/contexts/User";
+import { UserContextProvider } from "./components/contexts/UserContext";
+import { DomRef } from "./components/ref/DomRef";
 
 export default function App() {
   return (
     <div className="App">
-      <UserContextProvider>
-        <User />
-      </UserContextProvider>
+     <DomRef />
     </div>
   )    
 }

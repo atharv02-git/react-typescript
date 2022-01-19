@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { ThemeContext } from './contexts/ThemeContext';
 import {Name} from './Person.types'
 type PersonListProps = {
   names: Name[]
