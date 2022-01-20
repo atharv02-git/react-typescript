@@ -1,10 +1,12 @@
 import "./App.css";
-import { Counter } from "./components/class/Counter";
+import { Private } from "./components/auth/Private";
+import { Profile } from "./components/auth/Profile";
+
 
 export default function App() {
   return (
     <div className="App">
-      <Counter message="The count value is: "/>
+      <Private isLoggedin={false} component={Profile} />
     </div>
   )    
 }
