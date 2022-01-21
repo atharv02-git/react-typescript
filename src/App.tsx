@@ -1,13 +1,17 @@
 import "./App.css";
-import { Toast } from "./components/Template-Literals/Toast";
-
+import { Button } from "./components/html/Button";
 
 export default function App() {
   return (
     <div className="App">
-      {/* now instead of using position as center-center we can use a keyword Exclude which will help us to exculde the property we want */}
-      {/* <Toast position='center-center'/> */}
-      <Toast position='center'/>
+      {/* we can pass props like this but what is we want to pass choildren between html tags it will provide error */}
+     {/* <Button variant="primary" /> */}
+     {/* <Button variant="primary" onClick={() => console.log('Clicked!!')}>Click Me</Button> */}
+     {/* Again what if we want to restrict the children props to only set to string then we need to use keyword "Omit" */}
+     <Button variant="primary" onClick={() => console.log('Clicked!!')}>
+        {/* <div>Click me</div> */}
+        Click me
+      </Button>
     </div>
   );
 }
